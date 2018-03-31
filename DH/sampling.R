@@ -8,18 +8,18 @@
 
 sample(L1, 2)
 sample(L1, 30)  #error
-sample(L1, 30, replace=T)  
+sample(L1, 30, replace=T)   #replace the values back then again pick
 
 sample(M1)
 sample(M1, 5)
-set.seed(100)
+set.seed(100)  #too reproduce same samples 
 sample(M1,5)
-set.seed(100)
+set.seed(100)   #print same
 sample(M1,5)
 sample(M1,5)  # diff output w/o same seeding
 
 (grades= LETTERS[1:5])
-(sgrades = sample(grades, 20, replace=T, prob=c(0.4,0.3,0.2,0.1,0.1)))
+(sgrades = sample(grades, 20, replace=T, prob=c(0.4,0.2,0.2,0.1,0.1)))
 table(sgrades)
 prop.table(table(sgrades))
 (sgrades = sample(grades, 20, replace=T, prob=c(0.4,0.3,0.2,0.1,0.1)))
@@ -32,5 +32,6 @@ sample(2, nrow(mtcars), replace=T, prob=c(0.8,0.2))
 
 #Dplyr
 library(dplyr)
+dim(mtcars)
 sample_frac(mtcars, 0.2)
 sample_n(mtcars,5)
