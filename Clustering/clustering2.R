@@ -18,7 +18,7 @@ cust_data = data
 ###Verify the data
 colnames(cust_data)
 class(cust_data$Age)
-apply(cust_data, 2, FUN= class)
+apply(cust_data, 2, FUN= class)  #telling the datatype
 
 dim(cust_data)
 head(cust_data)
@@ -39,9 +39,14 @@ k1$withinss
 ###Fetch the cluster for each obs
 #k1$cluster
 k1$cluster
+k1$cluster[5000]
+k1$cluster[9000:9800]
+
+#send the data to someone
 data_clus_2 <- cust_data[ k1$cluster == 2,]
 data_clus_2$Cust_id
 # Write CSV
 write.csv(data_clus_2[,1], file = "./data/data_clus_2.csv")
+write.csv(data_clus_2[,1], file = "/Users/Downloads/piya")
 
 
